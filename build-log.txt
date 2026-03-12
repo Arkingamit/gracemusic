@@ -1,0 +1,29 @@
+
+> grace-music-app@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.12
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 8.6s
+   Linting and checking validity of types ...
+ ⨯ ESLint: Cannot find package 'eslint-plugin-react-refresh' imported from D:\Documents\startup\church app\Grace App - Copy\Grace App\eslint.config.js
+(node:21256) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Documents/startup/church%20app/Grace%20App%20-%20Copy/Grace%20App/eslint.config.js?mtime=1750956390723 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to D:\Documents\startup\church app\Grace App - Copy\Grace App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Failed to compile.
+
+./src/backend/models/genre.ts:22:36
+Type error: Conversion of type 'WithId<Document>' to type 'MongoGenre' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Type 'WithId<Document>' is missing the following properties from type 'MongoGenre': name, createdAt
+
+[0m [90m 20 |[39m       [36mconst[39m collection [33m=[39m [36mawait[39m getCollection([33mCOLLECTIONS[39m[33m.[39m[33mGENRES[39m)[33m;[39m
+ [90m 21 |[39m       [36mconst[39m result [33m=[39m [36mawait[39m collection[33m.[39mfindOne({ _id[33m:[39m [36mnew[39m [33mObjectId[39m(id) })[33m;[39m
+[31m[1m>[22m[39m[90m 22 |[39m       [36mreturn[39m result [33m?[39m [36mthis[39m[33m.[39mtoGenre(result [36mas[39m [33mMongoGenre[39m) [33m:[39m [36mnull[39m[33m;[39m
+ [90m    |[39m                                    [31m[1m^[22m[39m
+ [90m 23 |[39m     } [36mcatch[39m (error) {
+ [90m 24 |[39m       console[33m.[39merror([32m"Error finding genre by ID:"[39m[33m,[39m error)[33m;[39m
+ [90m 25 |[39m       [36mthrow[39m error[33m;[39m[0m
+Next.js build worker exited with code: 1 and signal: null
