@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:mobile": "next build && npx cap sync",
+    "build:mobile": "cross-env MOBILE_BUILD=true next build && npx cap sync",
     "start": "next start",
     "lint": "next lint"
   },
@@ -85,6 +85,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.20",
+    "cross-env": "^10.1.0",
     "eslint": "^9.9.0",
     "eslint-config-next": "^15.1.0",
     "postcss": "^8.4.47",

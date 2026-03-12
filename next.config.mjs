@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Mobile export only when explicitly requested
+  output: process.env.MOBILE_BUILD === 'true' ? 'export' : undefined,
   images: {
     unoptimized: true,
   },
